@@ -1,40 +1,38 @@
-/*
-Imports
+/* 
+Import & config
 */
+    // NodeJS
     const express = require('express');
     const frontRouter = express.Router();
-
 //
 
-
-/*
-Configuration
+/* 
+Definition
 */
     class FrontRouterClass {
         constructor(){}
-        routes(){
-            //=> Configurer la page d'accueil
-            frontRouter.get('/', (req, res) => {
-                //=> Rendre le fichier index
-                res.render('index');
-            });
 
-            frontRouter.get('/me', (req, res) => {
-                //=> Rendre le fichier index
+        routes(){
+            // Homepage
+            frontRouter.get( '/', (req, res) => {
+                res.render('index');
+            })
+
+            // Me
+            frontRouter.get( '/me', (req, res) => {
                 res.render('me');
-            });
+            })
         }
 
-        init() {
+        init(){
             this.routes();
             return frontRouter;
         }
     }
 //
 
-
-/*
-Exports
+/* 
+Export
 */
     module.exports = FrontRouterClass;
 //

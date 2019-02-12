@@ -1,49 +1,49 @@
-/*
-Imports
+/* 
+Import & config
 */
-const express = require('express');
-const postRouter = express.Router();
-
+    const express = require('express');
+    const postRouter = express.Router();
 //
 
-
-/*
-Configuration
+/* 
+Definition
 */
-class PostRouterClass {
-    constructor(){}
-    routes(){
-        // Create item
-        postRouter.post('/', (req, res) => {
-            res.json({msg: "Create post", req: req.body});
-        });
+    class PostRouterClass {
+        constructor(){}
 
-        // Read item
-        postRouter.get('/', (req, res) => {
-            res.json({msg: "Read post"});
-        });
+        routes(){
+            // Create
+            postRouter.post( '/', (req, res) => {
+                // req.user._id
+                
+                res.json( { msg: "Create Post", req: req.body } )
+            })
 
-        // Update item
-        postRouter.put('/', (req, res) => {
-            res.json({msg: "Update post"});
-        });
+            // Read
+            postRouter.get( '/', (req, res) => {
+                res.json( { msg: "Read Post" } )
+            })
 
-        // Delete item
-        postRouter.delete('/', (req, res) => {
-            res.json({msg: "Delete post"});
-        });
+            // Update
+            postRouter.put( '/', (req, res) => {
+                res.json( { msg: "Update Post" } )
+            })
+
+            // Delete
+            postRouter.delete( '/', (req, res) => {
+                res.json( { msg: "Delete Post" } )
+            })
+        }
+
+        init(){
+            this.routes();
+            return postRouter;
+        }
     }
-
-    init() {
-        this.routes();
-        return postRouter;
-    }
-}
 //
 
-
-/*
-Exports
+/* 
+Export
 */
-module.exports = PostRouterClass;
+    module.exports = PostRouterClass;
 //
