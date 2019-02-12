@@ -1,0 +1,19 @@
+<!--
+  Data-binding CTRL => VUE : [...]
+-->
+<h1 [innerHtml]="myTitle"></h1>
+
+<h2 [textContent]="formData.email"></h2>
+
+<!--
+  Data-binding VUE => CTRL : (...)
+-->
+<form action="" (submit)="formSubmit('toto@toto.com')">
+  <!--
+    Data-binding CTRL <=> VUE : [(...)]
+  -->
+  <input type="text" name="name" placeholder="name" [(ngModel)]="formData.name">
+  <input type="email" name="email" placeholder="email" [(ngModel)]="formData.email">
+  <input type="password" name="password" placeholder="password" [(ngModel)]="formData.password">
+  <button type="submit">OK</button>
+</form>
