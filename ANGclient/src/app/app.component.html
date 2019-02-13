@@ -1,19 +1,27 @@
 <!--
   Data-binding CTRL => VUE : [...]
 -->
+
 <h1 [innerHtml]="myTitle"></h1>
 
-<h2 [textContent]="formData.email"></h2>
+<p>Angular Index page</p>
 
 <!--
   Data-binding VUE => CTRL : (...)
--->
-<form action="" (submit)="formSubmit('toto@toto.com')">
-  <!--
+  -->
+
+<form action="" (submit)="formSubmit()">
+<!--
     Data-binding CTRL <=> VUE : [(...)]
   -->
   <input type="text" name="name" placeholder="name" [(ngModel)]="formData.name">
   <input type="email" name="email" placeholder="email" [(ngModel)]="formData.email">
   <input type="password" name="password" placeholder="password" [(ngModel)]="formData.password">
-  <button type="submit">OK</button>
+  <button type="submit">Register</button>
+</form>
+
+<form (submit)="loginUser()">
+  <input type="email" name="email" placeholder="email" [(ngModel)]="loginData.email">
+  <input type="password" name=password placeholder="password" [(ngModel)]="loginData.password">
+  <button type="submit">Login</button>
 </form>

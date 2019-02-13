@@ -37,7 +37,15 @@ Méthodes CRUD
     };
 
     const readItem = () => {
-
+        return new Promise( ( resolve,reject ) => {
+            // Listing all existing users
+            UserModel.find({}, function(err, docs) {
+                if (!err){ 
+                    console.log(docs);
+                    process.exit();
+                } else {throw err;}
+            });
+        })
     }
 
     const updateItem = () => {

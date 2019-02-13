@@ -13,6 +13,7 @@ Imports
 Méthodes CRUD
 */
     const register = (body) => {
+        // TODO : Register user
         return new Promise( (resolve, reject) => {
            
         });

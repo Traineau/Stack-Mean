@@ -14,13 +14,8 @@ Definition
 
         routes(){
             // Homepage
-            frontRouter.get( '/', (req, res) => {
+            frontRouter.get( '/*', (req, res) => {
                 res.render('index');
-            })
-
-            // Me
-            frontRouter.get( '/me', (req, res) => {
-                res.render('me');
             })
         }
 
